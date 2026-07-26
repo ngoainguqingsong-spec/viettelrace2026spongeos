@@ -1,40 +1,63 @@
 #!/usr/bin/env python3
-import os, sys, time, random, subprocess
-from datetime import datetime
-from dataclasses import dataclass
-from typing import List, Dict
+"""
+TEST SUITE cho vLLM - Dành cho Viettel AI Race 2026
+Tác giả: AI Assistant
+Tính năng:
+- Tự động scan môi trường
+- Chạy property test (luôn có)
+- Stress/Soak/Chaos nếu đủ điều kiện
+- Báo cáo kết quả ra file
+"""
 
-# =============== CẤU HÌNH ===============
+import os
+import sys
+import time
+import json
+import random
+import subprocess
+import threading
+from datetime import datetime
+from typing import Dict, List, Any
+from dataclasses import dataclass
+
+# --- Cấu hình ---
 VLLM_URL = "http://localhost:8000"
 VLLM_HEALTH = VLLM_URL + "/health"
 VLLM_GENERATE = VLLM_URL + "/generate"
 REPORT_FILE = "test_report.txt"
-PROPERTY_STATES = 100000
+PROPERTY_STATES = 100000  # đủ nhanh, đủ mạnh
 
-# =============== SCAN MÔI TRƯỜNG ===============
-def scan_environment():
-    env = {"has_gpu": False, "has_vllm": False, "has_sudo": False, "python": sys.version, "os": os.uname().sysname}
+# ===================== QUÉT MÔI TRƯỜNG =====================
+def scan_environment() -> Dict[str, Any]:
+    env = {
+        "has_gpu": False,
+        "has_vllm": False,
+        "has_sudo": False,
+        "python": sys.version,
+        "os": os.uname().sysname if hasattr(os, 'uname') else "unknown"
+    }
+    # GPU
     try:
-        subprocess.check_output(["nvidia-smi", "-L"], stderr=subprocess.DEVNULL)
+        out = subprocess.check_output(["nvidia-smi", "-L"], stderr=subprocess.DEVNULL)
         env["has_gpu"] = True
     except:
-        pass
+        env["has_gpu"] = False
+    # vLLM health
     try:
         import requests
         r = requests.get(VLLM_HEALTH, timeout=2)
         env["has_vllm"] = (r.status_code == 200)
     except:
-        pass
+        env["has_vllm"] = False
+    # sudo
     try:
         subprocess.check_call(["sudo", "-n", "true"], stderr=subprocess.DEVNULL)
         env["has_sudo"] = True
     except:
-        pass
+        env["has_sudo"] = False
     return env
 
-ENV = scan_environment()
-
-# =============== PROPERTY TEST ===============
+# ===================== PROPERTY TEST =====================
 @dataclass
 class Request:
     id: int
@@ -57,8 +80,13 @@ class SimpleScheduler:
         self.total_requests = 0
 
     def add_request(self, prompt_len, max_tokens):
-        req = Request(id=self.next_id, prompt_len=prompt_len, max_tokens=max_tokens,
-                      status="pending", max_tokens_original=max_tokens)
+        req = Request(
+            id=self.next_id,
+            prompt_len=prompt_len,
+            max_tokens=max_tokens,
+            status="pending",
+            max_tokens_original=max_tokens
+        )
         self.requests[self.next_id] = req
         self.pending.append(self.next_id)
         self.next_id += 1
@@ -108,23 +136,23 @@ def check_invariants(sched):
     total = sched.total_requests
     count = len(sched.pending) + len(sched.running) + len(sched.completed) + len(sched.failed)
     if total != count:
-        return False, f"total={total}, count={count}"
+        return False, f"Invariant1: total={total}, count={count}"
     if not (0 <= sched.memory_used <= sched.max_memory):
-        return False, f"memory_used={sched.memory_used}"
+        return False, f"Invariant2: memory_used={sched.memory_used}"
     for rid in sched.running:
         if sched.requests[rid].status != "processing":
-            return False, f"request {rid} status {sched.requests[rid].status}"
+            return False, f"Invariant3: request {rid} status {sched.requests[rid].status}"
     pending_set = set(sched.pending)
     running_set = set(sched.running)
     completed_set = set(sched.completed)
     failed_set = set(sched.failed)
     if pending_set & running_set or pending_set & completed_set or pending_set & failed_set or running_set & completed_set or running_set & failed_set:
-        return False, "overlapping sets"
+        return False, "Invariant4: overlapping sets"
     computed = 0
     for rid in sched.running:
         computed += sched.requests[rid].prompt_len + sched.requests[rid].max_tokens_original
     if computed != sched.memory_used:
-        return False, f"computed={computed}, memory_used={sched.memory_used}"
+        return False, f"Invariant5: computed={computed}, memory_used={sched.memory_used}"
     return True, "OK"
 
 def property_test(num_states=PROPERTY_STATES):
@@ -144,7 +172,7 @@ def property_test(num_states=PROPERTY_STATES):
             print(f"  Property: {i+1}/{num_states} states done")
     return True, "All invariants passed."
 
-# =============== STRESS TEST ===============
+# ===================== STRESS TEST =====================
 def stress_test():
     if not ENV["has_vllm"]:
         return "SKIP: vLLM không chạy"
@@ -173,7 +201,7 @@ def stress_test():
             break
     return results
 
-# =============== SOAK TEST (mock) ===============
+# ===================== SOAK TEST (mock) =====================
 def soak_test():
     print("⏳ Soak test mô phỏng (chạy 5 phút, không cần GPU thật)")
     mem_history = []
@@ -190,7 +218,7 @@ def soak_test():
     print(f"📊 Memory drift trong 5 phút: {drift} MB")
     return {"drift": drift, "mem_history": mem_history}
 
-# =============== CHAOS TEST ===============
+# ===================== CHAOS TEST (mock) =====================
 def chaos_test():
     if not ENV["has_sudo"] or not ENV["has_vllm"]:
         return "SKIP: cần sudo và vLLM"
@@ -216,8 +244,10 @@ def chaos_test():
             print("    → Service KHÔNG phục hồi")
     return "Chaos test completed"
 
-# =============== MAIN ===============
+# ===================== MAIN =====================
 def main():
+    global ENV
+    ENV = scan_environment()
     print("="*60)
     print("📋 BÁO CÁO MÔI TRƯỜNG:")
     print(f"  - OS: {ENV['os']}")
@@ -229,6 +259,7 @@ def main():
 
     report = []
     report.append(f"Test run: {datetime.now().isoformat()}")
+    report.append(f"Environment: {ENV}")
 
     print("\n🧪 PROPERTY TEST:")
     ok, msg = property_test(PROPERTY_STATES)

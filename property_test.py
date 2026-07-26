@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-import sys, random
+"""
+Property-based test cho vLLM scheduling logic.
+Usage: python3 property_test.py [num_states]
+Mặc định 1000000 nếu không truyền.
+"""
+
+import random
+import sys
 from dataclasses import dataclass
 from typing import List, Dict
 
@@ -25,8 +32,13 @@ class SimpleScheduler:
         self.total_requests = 0
 
     def add_request(self, prompt_len, max_tokens):
-        req = Request(id=self.next_id, prompt_len=prompt_len, max_tokens=max_tokens,
-                      status="pending", max_tokens_original=max_tokens)
+        req = Request(
+            id=self.next_id,
+            prompt_len=prompt_len,
+            max_tokens=max_tokens,
+            status="pending",
+            max_tokens_original=max_tokens
+        )
         self.requests[self.next_id] = req
         self.pending.append(self.next_id)
         self.next_id += 1
@@ -76,39 +88,46 @@ def check_invariants(sched):
     total = sched.total_requests
     count = len(sched.pending) + len(sched.running) + len(sched.completed) + len(sched.failed)
     if total != count:
-        return False, f"total={total}, count={count}"
+        print(f"Invariant 1 failed: total={total}, count={count}")
+        return False
     if not (0 <= sched.memory_used <= sched.max_memory):
-        return False, f"memory_used={sched.memory_used}"
+        print(f"Invariant 2 failed: memory_used={sched.memory_used}")
+        return False
     for rid in sched.running:
         if sched.requests[rid].status != "processing":
-            return False, f"request {rid} status {sched.requests[rid].status}"
+            print(f"Invariant 3 failed: request {rid} status {sched.requests[rid].status}")
+            return False
     pending_set = set(sched.pending)
     running_set = set(sched.running)
     completed_set = set(sched.completed)
     failed_set = set(sched.failed)
     if pending_set & running_set or pending_set & completed_set or pending_set & failed_set or running_set & completed_set or running_set & failed_set:
-        return False, "overlapping sets"
+        print("Invariant 4 failed: overlapping sets")
+        return False
     computed = 0
     for rid in sched.running:
         computed += sched.requests[rid].prompt_len + sched.requests[rid].max_tokens_original
     if computed != sched.memory_used:
-        return False, f"computed={computed}, memory_used={sched.memory_used}"
-    return True, "OK"
+        print(f"Invariant 5 failed: computed={computed}, memory_used={sched.memory_used}")
+        return False
+    return True
+
+def random_action(sched):
+    action = random.choice(['add', 'schedule', 'step'])
+    if action == 'add':
+        sched.add_request(random.randint(1, 2048), random.randint(1, 1024))
+    elif action == 'schedule':
+        sched.schedule()
+    else:
+        sched.step()
 
 def run_test(num_states):
     sched = SimpleScheduler()
     print(f"🔄 Property test với {num_states} trạng thái...")
     for i in range(num_states):
-        action = random.choice(['add', 'schedule', 'step'])
-        if action == 'add':
-            sched.add_request(random.randint(1, 2048), random.randint(1, 1024))
-        elif action == 'schedule':
-            sched.schedule()
-        else:
-            sched.step()
-        ok, msg = check_invariants(sched)
-        if not ok:
-            print(f"❌ Lỗi tại state {i}: {msg}")
+        random_action(sched)
+        if not check_invariants(sched):
+            print(f"❌ Lỗi tại state {i}")
             return False
         if (i+1) % max(1, num_states//10) == 0:
             print(f"  ✅ Đã qua {i+1} states")
