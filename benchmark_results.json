@@ -1,0 +1,1264 @@
+{
+  "h200": [
+    {
+      "ttft_ms": 83.52,
+      "tpot_ms": 101.11,
+      "throughput": 7.46,
+      "memory_mb": 1293,
+      "cpu_usage": 28.9,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP16_default_C1"
+    },
+    {
+      "ttft_ms": 73.34,
+      "tpot_ms": 90.7,
+      "throughput": 8.43,
+      "memory_mb": 1154,
+      "cpu_usage": 33.9,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP16_default_C4"
+    },
+    {
+      "ttft_ms": 63.04,
+      "tpot_ms": 73.85,
+      "throughput": 10.0,
+      "memory_mb": 1319,
+      "cpu_usage": 31.4,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP16_priority_C1"
+    },
+    {
+      "ttft_ms": 64.45,
+      "tpot_ms": 77.12,
+      "throughput": 9.71,
+      "memory_mb": 1234,
+      "cpu_usage": 54.3,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP16_priority_C4"
+    },
+    {
+      "ttft_ms": 52.14,
+      "tpot_ms": 59.73,
+      "throughput": 12.19,
+      "memory_mb": 1199,
+      "cpu_usage": 46.7,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP16_dynamic_C1"
+    },
+    {
+      "ttft_ms": 58.61,
+      "tpot_ms": 65.6,
+      "throughput": 10.94,
+      "memory_mb": 1237,
+      "cpu_usage": 56.3,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP16_dynamic_C4"
+    },
+    {
+      "ttft_ms": 57.51,
+      "tpot_ms": 64.09,
+      "throughput": 11.17,
+      "memory_mb": 1452,
+      "cpu_usage": 44.5,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B1_INT8_default_C1"
+    },
+    {
+      "ttft_ms": 48.69,
+      "tpot_ms": 53.84,
+      "throughput": 13.23,
+      "memory_mb": 1440,
+      "cpu_usage": 31.1,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B1_INT8_default_C4"
+    },
+    {
+      "ttft_ms": 39.56,
+      "tpot_ms": 45.15,
+      "throughput": 16.09,
+      "memory_mb": 1435,
+      "cpu_usage": 33.1,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B1_INT8_priority_C1"
+    },
+    {
+      "ttft_ms": 48.72,
+      "tpot_ms": 53.76,
+      "throughput": 13.23,
+      "memory_mb": 1531,
+      "cpu_usage": 11.6,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B1_INT8_priority_C4"
+    },
+    {
+      "ttft_ms": 35.74,
+      "tpot_ms": 41.88,
+      "throughput": 17.64,
+      "memory_mb": 1529,
+      "cpu_usage": 10.1,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B1_INT8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 41.05,
+      "tpot_ms": 45.19,
+      "throughput": 15.71,
+      "memory_mb": 1550,
+      "cpu_usage": 16.0,
+      "config": {
+        "batch_size": 1,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B1_INT8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 44.39,
+      "tpot_ms": 54.36,
+      "throughput": 13.97,
+      "memory_mb": 1471,
+      "cpu_usage": 10.0,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP8_default_C1"
+    },
+    {
+      "ttft_ms": 54.37,
+      "tpot_ms": 62.66,
+      "throughput": 11.67,
+      "memory_mb": 1531,
+      "cpu_usage": 21.7,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP8_default_C4"
+    },
+    {
+      "ttft_ms": 34.3,
+      "tpot_ms": 40.52,
+      "throughput": 18.33,
+      "memory_mb": 1538,
+      "cpu_usage": 33.6,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP8_priority_C1"
+    },
+    {
+      "ttft_ms": 38.29,
+      "tpot_ms": 43.45,
+      "throughput": 16.66,
+      "memory_mb": 1515,
+      "cpu_usage": 18.5,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP8_priority_C4"
+    },
+    {
+      "ttft_ms": 35.39,
+      "tpot_ms": 42.22,
+      "throughput": 17.7,
+      "memory_mb": 1422,
+      "cpu_usage": 24.8,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B1_FP8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 34.4,
+      "tpot_ms": 39.18,
+      "throughput": 18.52,
+      "memory_mb": 1597,
+      "cpu_usage": 32.5,
+      "config": {
+        "batch_size": 1,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B1_FP8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 49.62,
+      "tpot_ms": 60.07,
+      "throughput": 12.55,
+      "memory_mb": 1624,
+      "cpu_usage": 10.7,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP16_default_C1"
+    },
+    {
+      "ttft_ms": 44.6,
+      "tpot_ms": 54.76,
+      "throughput": 13.89,
+      "memory_mb": 1549,
+      "cpu_usage": 14.3,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP16_default_C4"
+    },
+    {
+      "ttft_ms": 43.44,
+      "tpot_ms": 48.32,
+      "throughput": 14.79,
+      "memory_mb": 1724,
+      "cpu_usage": 23.5,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP16_priority_C1"
+    },
+    {
+      "ttft_ms": 37.71,
+      "tpot_ms": 43.83,
+      "throughput": 16.77,
+      "memory_mb": 1705,
+      "cpu_usage": 49.6,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP16_priority_C4"
+    },
+    {
+      "ttft_ms": 39.82,
+      "tpot_ms": 49.77,
+      "throughput": 15.46,
+      "memory_mb": 1685,
+      "cpu_usage": 57.0,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP16_dynamic_C1"
+    },
+    {
+      "ttft_ms": 42.1,
+      "tpot_ms": 52.13,
+      "throughput": 14.67,
+      "memory_mb": 1701,
+      "cpu_usage": 30.0,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP16_dynamic_C4"
+    },
+    {
+      "ttft_ms": 27.75,
+      "tpot_ms": 34.13,
+      "throughput": 22.31,
+      "memory_mb": 1846,
+      "cpu_usage": 16.8,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B4_INT8_default_C1"
+    },
+    {
+      "ttft_ms": 28.07,
+      "tpot_ms": 33.57,
+      "throughput": 22.3,
+      "memory_mb": 1905,
+      "cpu_usage": 14.2,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B4_INT8_default_C4"
+    },
+    {
+      "ttft_ms": 24.76,
+      "tpot_ms": 28.55,
+      "throughput": 25.61,
+      "memory_mb": 1825,
+      "cpu_usage": 11.9,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B4_INT8_priority_C1"
+    },
+    {
+      "ttft_ms": 26.38,
+      "tpot_ms": 30.75,
+      "throughput": 23.95,
+      "memory_mb": 1846,
+      "cpu_usage": 27.5,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B4_INT8_priority_C4"
+    },
+    {
+      "ttft_ms": 26.56,
+      "tpot_ms": 29.83,
+      "throughput": 24.11,
+      "memory_mb": 1857,
+      "cpu_usage": 31.9,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B4_INT8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 27.21,
+      "tpot_ms": 32.96,
+      "throughput": 22.89,
+      "memory_mb": 1797,
+      "cpu_usage": 24.2,
+      "config": {
+        "batch_size": 4,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B4_INT8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 30.9,
+      "tpot_ms": 37.45,
+      "throughput": 20.15,
+      "memory_mb": 1861,
+      "cpu_usage": 6.7,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP8_default_C1"
+    },
+    {
+      "ttft_ms": 31.65,
+      "tpot_ms": 39.51,
+      "throughput": 19.45,
+      "memory_mb": 1810,
+      "cpu_usage": 19.3,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP8_default_C4"
+    },
+    {
+      "ttft_ms": 21.75,
+      "tpot_ms": 26.37,
+      "throughput": 28.63,
+      "memory_mb": 1918,
+      "cpu_usage": 0.8,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP8_priority_C1"
+    },
+    {
+      "ttft_ms": 25.47,
+      "tpot_ms": 31.14,
+      "throughput": 24.37,
+      "memory_mb": 1893,
+      "cpu_usage": 35.0,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP8_priority_C4"
+    },
+    {
+      "ttft_ms": 27.2,
+      "tpot_ms": 33.46,
+      "throughput": 22.76,
+      "memory_mb": 1921,
+      "cpu_usage": 28.0,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B4_FP8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 25.08,
+      "tpot_ms": 30.81,
+      "throughput": 24.7,
+      "memory_mb": 1920,
+      "cpu_usage": 17.5,
+      "config": {
+        "batch_size": 4,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B4_FP8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 30.45,
+      "tpot_ms": 36.9,
+      "throughput": 20.45,
+      "memory_mb": 2108,
+      "cpu_usage": 12.6,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP16_default_C1"
+    },
+    {
+      "ttft_ms": 30.54,
+      "tpot_ms": 34.68,
+      "throughput": 20.89,
+      "memory_mb": 2245,
+      "cpu_usage": 12.5,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP16_default_C4"
+    },
+    {
+      "ttft_ms": 26.17,
+      "tpot_ms": 30.37,
+      "throughput": 24.18,
+      "memory_mb": 2192,
+      "cpu_usage": 20.2,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP16_priority_C1"
+    },
+    {
+      "ttft_ms": 25.48,
+      "tpot_ms": 28.92,
+      "throughput": 25.04,
+      "memory_mb": 2141,
+      "cpu_usage": 34.7,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP16_priority_C4"
+    },
+    {
+      "ttft_ms": 25.85,
+      "tpot_ms": 30.15,
+      "throughput": 24.44,
+      "memory_mb": 2186,
+      "cpu_usage": 16.9,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP16_dynamic_C1"
+    },
+    {
+      "ttft_ms": 24.44,
+      "tpot_ms": 28.92,
+      "throughput": 25.71,
+      "memory_mb": 2189,
+      "cpu_usage": 6.7,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP16_dynamic_C4"
+    },
+    {
+      "ttft_ms": 21.05,
+      "tpot_ms": 25.44,
+      "throughput": 29.61,
+      "memory_mb": 2346,
+      "cpu_usage": 8.3,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B8_INT8_default_C1"
+    },
+    {
+      "ttft_ms": 29.68,
+      "tpot_ms": 32.65,
+      "throughput": 21.74,
+      "memory_mb": 2462,
+      "cpu_usage": 14.2,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B8_INT8_default_C4"
+    },
+    {
+      "ttft_ms": 20.2,
+      "tpot_ms": 23.4,
+      "throughput": 31.35,
+      "memory_mb": 2369,
+      "cpu_usage": 15.1,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B8_INT8_priority_C1"
+    },
+    {
+      "ttft_ms": 24.63,
+      "tpot_ms": 27.64,
+      "throughput": 26.01,
+      "memory_mb": 2392,
+      "cpu_usage": 5.8,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B8_INT8_priority_C4"
+    },
+    {
+      "ttft_ms": 17.98,
+      "tpot_ms": 20.82,
+      "throughput": 35.23,
+      "memory_mb": 2329,
+      "cpu_usage": 10.9,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B8_INT8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 24.33,
+      "tpot_ms": 29.98,
+      "throughput": 25.43,
+      "memory_mb": 2447,
+      "cpu_usage": 10.1,
+      "config": {
+        "batch_size": 8,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B8_INT8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 26.18,
+      "tpot_ms": 32.16,
+      "throughput": 23.66,
+      "memory_mb": 2316,
+      "cpu_usage": 5.0,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP8_default_C1"
+    },
+    {
+      "ttft_ms": 23.65,
+      "tpot_ms": 28.29,
+      "throughput": 26.46,
+      "memory_mb": 2333,
+      "cpu_usage": 12.6,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP8_default_C4"
+    },
+    {
+      "ttft_ms": 19.89,
+      "tpot_ms": 23.95,
+      "throughput": 31.38,
+      "memory_mb": 2367,
+      "cpu_usage": 13.2,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP8_priority_C1"
+    },
+    {
+      "ttft_ms": 17.09,
+      "tpot_ms": 21.2,
+      "throughput": 36.12,
+      "memory_mb": 2443,
+      "cpu_usage": 10.8,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP8_priority_C4"
+    },
+    {
+      "ttft_ms": 18.64,
+      "tpot_ms": 21.17,
+      "throughput": 34.22,
+      "memory_mb": 2417,
+      "cpu_usage": 9.2,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B8_FP8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 21.09,
+      "tpot_ms": 23.3,
+      "throughput": 30.55,
+      "memory_mb": 2455,
+      "cpu_usage": 4.2,
+      "config": {
+        "batch_size": 8,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B8_FP8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 28.02,
+      "tpot_ms": 34.33,
+      "throughput": 22.13,
+      "memory_mb": 3084,
+      "cpu_usage": 10.1,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP16_default_C1"
+    },
+    {
+      "ttft_ms": 28.68,
+      "tpot_ms": 34.94,
+      "throughput": 21.67,
+      "memory_mb": 3173,
+      "cpu_usage": 39.8,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP16_default_C4"
+    },
+    {
+      "ttft_ms": 22.52,
+      "tpot_ms": 26.32,
+      "throughput": 28.03,
+      "memory_mb": 3245,
+      "cpu_usage": 37.2,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP16_priority_C1"
+    },
+    {
+      "ttft_ms": 28.15,
+      "tpot_ms": 31.13,
+      "throughput": 22.88,
+      "memory_mb": 3242,
+      "cpu_usage": 14.3,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP16_priority_C4"
+    },
+    {
+      "ttft_ms": 25.51,
+      "tpot_ms": 28.11,
+      "throughput": 25.28,
+      "memory_mb": 3227,
+      "cpu_usage": 12.4,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP16_dynamic_C1"
+    },
+    {
+      "ttft_ms": 18.62,
+      "tpot_ms": 21.78,
+      "throughput": 33.89,
+      "memory_mb": 3209,
+      "cpu_usage": 20.8,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP16_dynamic_C4"
+    },
+    {
+      "ttft_ms": 18.61,
+      "tpot_ms": 21.2,
+      "throughput": 34.23,
+      "memory_mb": 3482,
+      "cpu_usage": 15.3,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B16_INT8_default_C1"
+    },
+    {
+      "ttft_ms": 18.7,
+      "tpot_ms": 22.95,
+      "throughput": 33.14,
+      "memory_mb": 3417,
+      "cpu_usage": 17.5,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B16_INT8_default_C4"
+    },
+    {
+      "ttft_ms": 18.37,
+      "tpot_ms": 20.48,
+      "throughput": 34.96,
+      "memory_mb": 3353,
+      "cpu_usage": 16.0,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B16_INT8_priority_C1"
+    },
+    {
+      "ttft_ms": 15.46,
+      "tpot_ms": 19.06,
+      "throughput": 40.02,
+      "memory_mb": 3386,
+      "cpu_usage": 3.4,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B16_INT8_priority_C4"
+    },
+    {
+      "ttft_ms": 12.73,
+      "tpot_ms": 14.29,
+      "throughput": 50.33,
+      "memory_mb": 3466,
+      "cpu_usage": 4.1,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B16_INT8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 13.16,
+      "tpot_ms": 16.23,
+      "throughput": 47.01,
+      "memory_mb": 3485,
+      "cpu_usage": 6.7,
+      "config": {
+        "batch_size": 16,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B16_INT8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 18.99,
+      "tpot_ms": 21.11,
+      "throughput": 33.85,
+      "memory_mb": 3451,
+      "cpu_usage": 10.0,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP8_default_C1"
+    },
+    {
+      "ttft_ms": 18.31,
+      "tpot_ms": 20.31,
+      "throughput": 35.13,
+      "memory_mb": 3455,
+      "cpu_usage": 18.5,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP8_default_C4"
+    },
+    {
+      "ttft_ms": 13.68,
+      "tpot_ms": 16.75,
+      "throughput": 45.34,
+      "memory_mb": 3458,
+      "cpu_usage": 21.0,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP8_priority_C1"
+    },
+    {
+      "ttft_ms": 13.37,
+      "tpot_ms": 15.31,
+      "throughput": 47.55,
+      "memory_mb": 3370,
+      "cpu_usage": 11.7,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP8_priority_C4"
+    },
+    {
+      "ttft_ms": 13.66,
+      "tpot_ms": 15.97,
+      "throughput": 46.19,
+      "memory_mb": 3458,
+      "cpu_usage": 24.2,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B16_FP8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 16.35,
+      "tpot_ms": 18.12,
+      "throughput": 39.35,
+      "memory_mb": 3422,
+      "cpu_usage": 23.3,
+      "config": {
+        "batch_size": 16,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B16_FP8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 19.38,
+      "tpot_ms": 24.14,
+      "throughput": 31.79,
+      "memory_mb": 5256,
+      "cpu_usage": 7.5,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP16_default_C1"
+    },
+    {
+      "ttft_ms": 24.18,
+      "tpot_ms": 26.86,
+      "throughput": 26.58,
+      "memory_mb": 5240,
+      "cpu_usage": 15.1,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP16_default_C4"
+    },
+    {
+      "ttft_ms": 17.9,
+      "tpot_ms": 20.54,
+      "throughput": 35.5,
+      "memory_mb": 5301,
+      "cpu_usage": 8.4,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP16_priority_C1"
+    },
+    {
+      "ttft_ms": 21.55,
+      "tpot_ms": 26.39,
+      "throughput": 28.78,
+      "memory_mb": 5283,
+      "cpu_usage": 14.0,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP16_priority_C4"
+    },
+    {
+      "ttft_ms": 18.36,
+      "tpot_ms": 21.06,
+      "throughput": 34.61,
+      "memory_mb": 5161,
+      "cpu_usage": 18.6,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP16_dynamic_C1"
+    },
+    {
+      "ttft_ms": 20.41,
+      "tpot_ms": 23.66,
+      "throughput": 31.01,
+      "memory_mb": 5201,
+      "cpu_usage": 22.5,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP16",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP16_dynamic_C4"
+    },
+    {
+      "ttft_ms": 17.23,
+      "tpot_ms": 19.79,
+      "throughput": 36.86,
+      "memory_mb": 5470,
+      "cpu_usage": 14.2,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B32_INT8_default_C1"
+    },
+    {
+      "ttft_ms": 18.07,
+      "tpot_ms": 20.84,
+      "throughput": 35.1,
+      "memory_mb": 5422,
+      "cpu_usage": 25.2,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B32_INT8_default_C4"
+    },
+    {
+      "ttft_ms": 10.17,
+      "tpot_ms": 12.05,
+      "throughput": 61.74,
+      "memory_mb": 5453,
+      "cpu_usage": 20.0,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B32_INT8_priority_C1"
+    },
+    {
+      "ttft_ms": 14.67,
+      "tpot_ms": 17.49,
+      "throughput": 42.7,
+      "memory_mb": 5564,
+      "cpu_usage": 10.9,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B32_INT8_priority_C4"
+    },
+    {
+      "ttft_ms": 11.37,
+      "tpot_ms": 13.3,
+      "throughput": 55.49,
+      "memory_mb": 5439,
+      "cpu_usage": 23.5,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B32_INT8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 11.33,
+      "tpot_ms": 13.19,
+      "throughput": 55.79,
+      "memory_mb": 5467,
+      "cpu_usage": 14.2,
+      "config": {
+        "batch_size": 32,
+        "quantization": "INT8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B32_INT8_dynamic_C4"
+    },
+    {
+      "ttft_ms": 14.39,
+      "tpot_ms": 17.08,
+      "throughput": 43.61,
+      "memory_mb": 5451,
+      "cpu_usage": 24.0,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP8_default_C1"
+    },
+    {
+      "ttft_ms": 14.28,
+      "tpot_ms": 17.19,
+      "throughput": 43.72,
+      "memory_mb": 5412,
+      "cpu_usage": 25.0,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "default",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP8_default_C4"
+    },
+    {
+      "ttft_ms": 10.67,
+      "tpot_ms": 13.21,
+      "throughput": 57.89,
+      "memory_mb": 5382,
+      "cpu_usage": 29.1,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP8_priority_C1"
+    },
+    {
+      "ttft_ms": 12.38,
+      "tpot_ms": 14.7,
+      "throughput": 50.68,
+      "memory_mb": 5551,
+      "cpu_usage": 18.5,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "priority",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP8_priority_C4"
+    },
+    {
+      "ttft_ms": 11.19,
+      "tpot_ms": 12.92,
+      "throughput": 56.65,
+      "memory_mb": 5575,
+      "cpu_usage": 26.7,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 1
+      },
+      "config_name": "B32_FP8_dynamic_C1"
+    },
+    {
+      "ttft_ms": 13.41,
+      "tpot_ms": 15.01,
+      "throughput": 47.82,
+      "memory_mb": 5376,
+      "cpu_usage": 35.3,
+      "config": {
+        "batch_size": 32,
+        "quantization": "FP8",
+        "scheduling": "dynamic",
+        "concurrency": 4
+      },
+      "config_name": "B32_FP8_dynamic_C4"
+    }
+  ]
+}
