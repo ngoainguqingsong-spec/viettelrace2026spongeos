@@ -1,0 +1,35 @@
+{
+  "profiles": {
+    "skeptical_professional": {
+      "preferred_gate": "precision",
+      "voice": "analytical"
+    },
+    "creative_thinker": {
+      "preferred_gate": "imagery",
+      "voice": "inspiring"
+    }
+  },
+  "gates": {
+    "precision": { "strategy": "clear, assertive statements" },
+    "emotion": { "strategy": "warm, relatable stories" },
+    "imagery": { "strategy": "abstract metaphors" }
+  },
+  "colors": {
+    "red": { "hex": "#FF0000", "gate": "emotion", "words": {"vi": "mạnh mẽ, đam mê", "en": "powerful, passion"} },
+    "blue": { "hex": "#0047AB", "gate": "precision", "words": {"vi": "chính xác, logic", "en": "precise, logical"} }
+  },
+  "content_types": {
+    "insight": { "template": "Phân tích {topic} từ góc nhìn mới..." },
+    "contrast": { "template": "Sự khác biệt giữa {topic} và những gì bạn nghĩ..." }
+  },
+  "china_triggers": [
+    { "hook": "Bí ẩn đằng sau..." },
+    { "hook": "Chuyện gì đang xảy ra với..." }
+  ],
+  "seen_model_stages": [
+    {"goal": "awareness"},
+    {"goal": "engagement"}
+  ],
+  "cao_endpoint": "http://localhost:8080/approve",
+  "wal_path": "~/semantic-core/wal/events.jsonl"
+}

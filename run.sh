@@ -1,17 +1,27 @@
 #!/bin/bash
-echo "🔍 Quét môi trường hệ thống..."
-if command -v python3 &>/dev/null; then
-    PYTHON=python3
-elif command -v python &>/dev/null; then
-    PYTHON=python
-else
-    echo "❌ Không tìm thấy Python. Hãy cài đặt Python 3."
-    exit 1
-fi
-echo "✅ Dùng Python: $($PYTHON --version)"
-$PYTHON -c "import requests" 2>/dev/null || {
-    echo "⚠️  Thư viện 'requests' chưa có, đang cài pip..."
-    $PYTHON -m pip install requests --user --quiet
-}
-echo "🚀 Chạy test suite..."
-$PYTHON test_suite.py
+# run.sh - Chạy toàn bộ pipeline tự động
+
+set -e
+
+echo "🚀 VIETTEL AI RACE 2026 - PIPELINE"
+echo "========================================"
+
+# 1. Cài đặt dependencies
+echo "📦 Cài đặt dependencies..."
+pip install -r requirements.txt -q
+
+# 2. Chạy property test
+echo "🧪 Chạy property test (100k states)..."
+python3 property_test.py
+
+# 3. Chạy benchmark
+echo "📊 Chạy benchmark trên H200..."
+python3 bench.py run-fast
+
+# 4. Tạo báo cáo
+echo "📄 Tạo báo cáo..."
+python3 generate_report.py
+
+echo "✅ HOÀN TẤT!"
+echo "📁 Kết quả: benchmark_results/"
+echo "📄 Báo cáo: BENCHMARK_REPORT.md"
