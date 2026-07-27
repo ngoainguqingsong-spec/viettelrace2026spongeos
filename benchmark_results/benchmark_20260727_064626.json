@@ -1,0 +1,163 @@
+[
+  {
+    "config": {
+      "batch_size": 1,
+      "quantization": "FP16",
+      "scheduling": "default",
+      "concurrency": 1
+    },
+    "ttft_avg": 103.48,
+    "tpot_avg": 110.6,
+    "throughput": 6.3,
+    "memory_mb": 1161,
+    "cpu_usage": 16.7,
+    "system_load": {
+      "cpu_percent": 11.4,
+      "memory_percent": 66.8,
+      "load_avg": [
+        2.79248046875,
+        2.8818359375,
+        2.9130859375
+      ]
+    },
+    "scenario_name": "Baseline (FP16, batch=1, default)"
+  },
+  {
+    "config": {
+      "batch_size": 4,
+      "quantization": "FP16",
+      "scheduling": "default",
+      "concurrency": 1
+    },
+    "ttft_avg": 67.96,
+    "tpot_avg": 74.66,
+    "throughput": 9.5,
+    "memory_mb": 1592,
+    "cpu_usage": 13.4,
+    "system_load": {
+      "cpu_percent": 10.1,
+      "memory_percent": 66.6,
+      "load_avg": [
+        2.79248046875,
+        2.8818359375,
+        2.9130859375
+      ]
+    },
+    "scenario_name": "Batch 4, FP16"
+  },
+  {
+    "config": {
+      "batch_size": 1,
+      "quantization": "INT8",
+      "scheduling": "default",
+      "concurrency": 1
+    },
+    "ttft_avg": 87.8,
+    "tpot_avg": 96.36,
+    "throughput": 7.35,
+    "memory_mb": 1238,
+    "cpu_usage": 19.3,
+    "system_load": {
+      "cpu_percent": 13.3,
+      "memory_percent": 66.7,
+      "load_avg": [
+        2.79248046875,
+        2.8818359375,
+        2.9130859375
+      ]
+    },
+    "scenario_name": "Batch 1, INT8"
+  },
+  {
+    "config": {
+      "batch_size": 4,
+      "quantization": "INT8",
+      "scheduling": "default",
+      "concurrency": 1
+    },
+    "ttft_avg": 58.91,
+    "tpot_avg": 65.82,
+    "throughput": 10.89,
+    "memory_mb": 1562,
+    "cpu_usage": 8.3,
+    "system_load": {
+      "cpu_percent": 15.4,
+      "memory_percent": 67.8,
+      "load_avg": [
+        2.79248046875,
+        2.8818359375,
+        2.9130859375
+      ]
+    },
+    "scenario_name": "Batch 4, INT8"
+  },
+  {
+    "config": {
+      "batch_size": 1,
+      "quantization": "FP16",
+      "scheduling": "priority",
+      "concurrency": 1
+    },
+    "ttft_avg": 86.73,
+    "tpot_avg": 101.45,
+    "throughput": 7.27,
+    "memory_mb": 1175,
+    "cpu_usage": 28.0,
+    "system_load": {
+      "cpu_percent": 27.5,
+      "memory_percent": 71.1,
+      "load_avg": [
+        2.79248046875,
+        2.8818359375,
+        2.9130859375
+      ]
+    },
+    "scenario_name": "Batch 1, FP16, priority scheduling"
+  },
+  {
+    "config": {
+      "batch_size": 1,
+      "quantization": "FP16",
+      "scheduling": "default",
+      "concurrency": 10
+    },
+    "ttft_avg": 166.02,
+    "tpot_avg": 189.87,
+    "throughput": 3.83,
+    "memory_mb": 1184,
+    "cpu_usage": 20.0,
+    "system_load": {
+      "cpu_percent": 21.1,
+      "memory_percent": 66.6,
+      "load_avg": [
+        2.8896484375,
+        2.90087890625,
+        2.9189453125
+      ]
+    },
+    "scenario_name": "Batch 1, FP16, concurrency=10"
+  },
+  {
+    "config": {
+      "batch_size": 4,
+      "quantization": "INT8",
+      "scheduling": "priority",
+      "concurrency": 4
+    },
+    "ttft_avg": 53.89,
+    "tpot_avg": 55.82,
+    "throughput": 12.23,
+    "memory_mb": 1601,
+    "cpu_usage": 15.7,
+    "system_load": {
+      "cpu_percent": 23.7,
+      "memory_percent": 67.4,
+      "load_avg": [
+        2.8896484375,
+        2.90087890625,
+        2.9189453125
+      ]
+    },
+    "scenario_name": "OPTIMAL: Batch 4, INT8, priority scheduling"
+  }
+]

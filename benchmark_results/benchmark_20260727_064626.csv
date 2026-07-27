@@ -1,0 +1,8 @@
+Scenario,TTFT_ms,TPOT_ms,Throughput_reqs,Memory_MB,CPU_Percent
+Baseline (FP16, batch=1, default),103.48,110.6,6.3,1161,16.7
+Batch 4, FP16,67.96,74.66,9.5,1592,13.4
+Batch 1, INT8,87.8,96.36,7.35,1238,19.3
+Batch 4, INT8,58.91,65.82,10.89,1562,8.3
+Batch 1, FP16, priority scheduling,86.73,101.45,7.27,1175,28.0
+Batch 1, FP16, concurrency=10,166.02,189.87,3.83,1184,20.0
+OPTIMAL: Batch 4, INT8, priority scheduling,53.89,55.82,12.23,1601,15.7
